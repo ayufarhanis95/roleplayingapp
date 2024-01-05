@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Long+Cang&display=swap');
+
+:root {
+  --background-color: #003566;
+  --title-text: #a8dadc;
+  --button-color: #ffd60a;
+  --button-hover: #ffc300;
+  --status: #001d3d;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 25px;
+  background-color: var(--background-color);
+  user-select: none;
+}
+
+h1 {
+  font-family: 'Rubik Doodle Shadow', sans-serif;
+  font-size: 1.5rem;  
+  text-align: center;
+  color: var(--title-text);
+  margin-top: 10px;
+}
+
+body:not(h1) {
+  font-family: 'Long Cang', cursive;
+  color: var(--button-hover);
+/*   max-width: 400px; */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 350px;
+}
+
+div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+button {
+  text-align: center;
+  font-family: 'Long Cang', cursive;
+  background-color: var(--button-color);
+  border-radius: 10px;
+  border: 2px solid var(--button-color);
+  padding: 5px;   
+}
+
+button:hover {
+ background-color: var(--button-hover);
+ border: 2px solid var(--button-hover);
+ cursor: pointer;
+}
+
+#button {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 10px;
+}
+
+#text {
+  text-align: center;
+}
+
+#status {
+  border: 2px solid var(--button-hover);
+  border-radius: 10px;
+  padding: 10px;
+  color: var(--title-text);
+  display: flex;
+  justify-content: space-between;
+}
+
+#monster {
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 10px;
+  color: red;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#dragon, #slime, #fangedbeast {
+  height: 100px;
+  border-radius: 50%;
+}
+
+#description {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
