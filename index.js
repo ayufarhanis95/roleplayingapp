@@ -1,9 +1,6 @@
 // variables
 const textEl = document.getElementById("text")
 const statusEl = document.getElementById("status")
-// const xpEl = document.getElementById("xp")
-// const healthEl = document.getElementById("health")
-// const goldEl = document.getElementById("gold")
 const xpamtEl = document.getElementById("xpamt")
 const healthamtEl = document.getElementById("healthamt")
 const goldamtEl = document.getElementById("goldamt")
@@ -17,6 +14,8 @@ const dragonEl = document.getElementById("dragon")
 const slimepicEl = document.getElementById("slime")
 const fangedEl = document.getElementById("fangedbeast")
 let monsterHealth
+
+// original variables
 let xp = 0
 let health = 100
 let gold = 50
@@ -24,7 +23,7 @@ let inventory = ["stick"]
 let currentWeapon = 0
 let fighting = 0
 
-
+// initial values
 xpamtEl.textContent = xp
 healthamtEl.textContent = health
 goldamtEl.textContent = gold
@@ -74,7 +73,6 @@ const buttons = [
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
   }
   
-
 ]
 
 // Objects for types of weapons
@@ -92,6 +90,15 @@ const monsters = [
   {name: "Dragon", level: 20, health: 300}
 ]
 
+// initial button
+button1El.onclick = store
+button2El.onclick = cave
+button3El.onclick = fightDragon
+monsterEl.style.display = "none"
+dragonEl.style.display = "none"
+slimepicEl.style.display = "none"
+fangedEl.style.display = "none"
+
 // function for store
 function buyHealth(){
   if (gold > 10) {
@@ -102,7 +109,6 @@ function buyHealth(){
   } else {
     textEl.textContent = "You have no gold left to buy health"
   }
-  
 }
 function buyWeapon(){
   if (currentWeapon < weapons.length - 1) {
@@ -118,14 +124,12 @@ function buyWeapon(){
     }
   } else {
     textEl.textContent = "You already have the most powerful weapon!"
-    button2.textContent = "Sell weapon for 15 gold!"
-    button2.onclick = sellWeapon
+    button2El.textContent = "Sell weapon for 15 gold!"
+    button2El.onclick = sellWeapon
   }
-  
-  
 }
 
-// function for location
+// function for each location
 function townSquare(){
   monsterEl.style.display = "none"
   dragonEl.style.display = "none"
@@ -148,12 +152,12 @@ function sellWeapon(){
     textEl.textContent = "You sold a " + currentWeapon + ". "
     textEl.textContent += "Now you own " + inventory + "."
   } else {
-    textEl.textContent = "You are only left with 1 weapon!"
+    textEl.textContent = "You are only left with 1 weapon left!"
   }
 
 }
 
-//function for beast
+//function for fighting with beast
 function goFight(){
   update(buttons[3])
   monsterEl.style.display = "block";
@@ -236,14 +240,7 @@ function restart(){
   townSquare();
 }
 
-// initial button
-  button1El.onclick = store
-  button2El.onclick = cave
-  button3El.onclick = fightDragon
-  monsterEl.style.display = "none"
-  dragonEl.style.display = "none"
-  slimepicEl.style.display = "none"
-  fangedEl.style.display = "none"
+
 
 function update(location){
   textEl.textContent = location.text
